@@ -1,0 +1,765 @@
+U-Boot 2012.10-00099-g7c856f3 (Mar 19 2015 - 12:00:01)Meraki MX64 Boot Kernel Loader
+
+DEV ID = 0xcf1e
+PCIE CFG DEV ID = 0x8025
+OTP offset(0x8): 0x78701c01
+OTP offset(0x9): 0xfe000018
+OTP offset(0xa): 0xc01b0
+OTP offset(0xb): 0x0
+OTP offset(0xc): 0x4a00000
+OTP offset(0xd): 0xfffde030
+OTP offset(0xe): 0x35d17f
+OTP offset(0xf): 0x20
+NSP25 32bit DDR
+SKU ID = 0x0
+DDR type: DDR3
+MEMC 0 DDR speed = 800MHz
+ddr_init2: Calling soc_ddr40_set_shmoo_dram_config
+ddr_init2: Calling soc_ddr40_phy_calibrate
+C01. Check Power Up Reset_Bar
+C02. Config and Release PLL from reset
+C03. Poll PLL Lock
+C04. Calibrate ZQ (ddr40_phy_calib_zq)
+C05. DDR PHY VTT On (Virtual VTT setup) DISABLE all Virtual VTT
+C06. DDR40_PHY_DDR3_MISC
+C07. VDL Calibration
+C07.1
+C07.2
+C07.4
+C07.4.1
+C07.4.4
+VDL calibration result: 0x30000003 (cal_steps = 0)
+C07.4.5
+C07.4.6
+C07.5
+C08. DDR40_PHY_DDR3_MISC : Start DDR40_PHY_RDLY_ODT....
+C09. Start ddr40_phy_autoidle_on (MEM_SYS_PARAM_PHY_AUTO_IDLE) ....
+C10. Wait for Phy Ready
+Programming controller register
+ddr_init2: Calling soc_ddr40_shmoo_ctl
+Validate Shmoo parameters stored in flash ..... OK
+Press Ctrl-C to run Shmoo ..... skipped
+Restoring Shmoo parameters from flash ..... done
+Running simple memory test ..... OK
+DDR Tune Completed
+DRAM:  31.9 MiB
+WARNING: Caches not enabled
+NAND:   Micron MT29F8G08ABACA, Found strap type 0x0 strap page 0x2
+
+*ERROR* Invalid strap options for this NAND: page=2 type=9
+Overriding MT29F8G08ABACA strap options : strap_type=9
+256 KiB blocks, 4 KiB pages, 27B OOB, 8-bit
+NAND:   chipsize 1024 MiB
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+arm_clk=1200MHz, axi_clk=600MHz, apb_clk=300MHz, arm_periph_clk=600MHz
+Enabling icache and dcache
+Enabling l2cache
+
+NAND read: device 0 offset 0x500000, size 0x200000
+ 2097152 bytes read: OK
+Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0
+
+[    0.000000] Linux version 3.4.104+ (jdizzle@x) (gcc version 4.8.3 (GCC) ) #2 Tue Aug 25 19:11:05 PDT 2015
+
+[    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
+
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+
+[    0.000000] Machine: Meraki Kingpin, model: Meraki MX64
+
+[    0.000000] bootconsole [earlycon0] enabled
+
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+
+[    0.000000] BUG: mapping for 0x18000000 at 0xff000000 out of vmalloc space
+
+[    0.000000] BUG: mapping for 0x19000000 at 0xff200000 out of vmalloc space
+
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 260080
+
+[    0.000000] Kernel command line: console=ttyS0,115200n8 ubi.mtd=ubi mem=0x3fff0000 earlyprintk loader=u-boot part=bootkernel2
+
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+
+[    0.000000] Memory: 1023MB = 1023MB total
+
+[    0.000000] Memory: 1034188k/1034188k available, 14324k reserved, 0K highmem
+
+[    0.000000] Virtual kernel memory layout:
+
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+
+[    0.000000]     vmalloc : 0x80000000 - 0xff000000   (2032 MB)
+
+[    0.000000]     lowmem  : 0x40000000 - 0x7fff0000   (1023 MB)
+
+[    0.000000]     modules : 0x3f000000 - 0x40000000   (  16 MB)
+
+[    0.000000]       .text : 0x40008000 - 0x4030f758   (3102 kB)
+
+[    0.000000]       .init : 0x40310000 - 0x404dd974   (1847 kB)
+
+[    0.000000]       .data : 0x404de000 - 0x40504648   ( 154 kB)
+
+[    0.000000]        .bss : 0x4050466c - 0x40527ea0   ( 143 kB)
+
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+
+[    0.000000] NR_IRQS:292
+
+[    0.000000] Data abort at addr=0x0, fsr=0x1c06 ignored.
+
+[    0.000000] sched_clock: 32 bits at 100 Hz, resolution 10000000ns, wraps every 4294967286ms
+
+[    0.010000] Calibrating delay loop... 2393.70 BogoMIPS (lpj=11968512)
+
+[    0.080000] pid_max: default: 32768 minimum: 301
+
+[    0.080000] Mount-cache hash table entries: 512
+
+[    0.090000] CPU: Testing write buffer coherency: ok
+
+[    0.090000] Setting up static identity map for 0x60238c68 - 0x60238cc0
+
+[    0.100000] L310 cache controller enabled
+
+[    0.100000] l2x0: 16 ways, CACHE_ID 0x410000c8, AUX_CTRL 0x0a150000, Cache size: 524288 B
+
+[    0.110000] devtmpfs: initialized
+
+[    0.120000] NET: Registered protocol family 16
+
+[    0.120000] gpiochip_add: registered GPIOs 0 to 31 on device: GPIOA
+
+[    0.130000] iproc gpiochip add GPIOA
+
+[    0.130000] GPIOA:ioaddr ff000060 
+
+[    0.140000] GPIOA:intr_ioaddr ff000000 dmu_ioaddr ff020000
+
+[    0.140000] gpiochip_add: registered GPIOs 32 to 35 on device: GPIOB
+
+[    0.150000] iproc gpiochip add GPIOB
+
+[    0.150000] GPIOB:ioaddr ff030000 
+
+[    0.160000] request_idm_timeout_interrupts: 600 entry
+
+[    0.160000] idm_timeout_handler: 340, 0 entry
+
+[    0.170000] idm_timeout_handler: 585 exit
+
+[    0.170000] request_idm_timeout_interrupts: 696 exit
+
+[    0.170000] hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+
+[    0.180000] hw-breakpoint: maximum watchpoint size is 4 bytes.
+
+[    0.190000] bio: create slab <bio-0> at 0
+
+[    0.200000] usbcore: registered new interface driver usbfs
+
+[    0.200000] usbcore: registered new interface driver hub
+
+[    0.210000] usbcore: registered new device driver usb
+
+[    0.210000] i2c-gpio i2c-gpio.3: using pins 5 (SDA) and 4 (SCL)
+
+[    0.220000] Switching to clocksource iproc_gtimer
+
+[    0.230000] NET: Registered protocol family 2
+
+[    0.240000] IP route cache hash table entries: 32768 (order: 5, 131072 bytes)
+
+[    0.240000] TCP established hash table entries: 131072 (order: 8, 1048576 bytes)
+
+[    0.250000] TCP bind hash table entries: 65536 (order: 6, 262144 bytes)
+
+[    0.260000] TCP: Hash tables configured (established 131072 bind 65536)
+
+[    0.270000] TCP: reno registered
+
+[    0.270000] UDP hash table entries: 512 (order: 1, 8192 bytes)
+
+[    0.280000] UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+
+[    0.280000] NET: Registered protocol family 1
+
+[    0.540000] PCIE0: LINKSTA reg 0xbe val 0x1001
+
+[    0.550000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x2, PCIE0 link=0
+
+[    0.920000] PCIE1: LINKSTA reg 0xbe val 0x1001
+
+[    0.920000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x2, PCIE1 link=0
+
+[    1.290000] PCIE2: LINKSTA reg 0xbe val 0x1001
+
+[    1.300000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x2, reg[0xde]=0x1, PCIE2 link=0
+
+[    1.420000] pm_init: Initializing Power Management ....
+
+[    1.430000] msgmni has been set to 2019
+
+[    1.430000] io scheduler noop registered
+
+[    1.440000] io scheduler deadline registered
+
+[    1.440000] io scheduler cfq registered (default)
+
+[    1.450000] iproc_pwmc_probe iobase ff031000 phys:18031000
+
+[    1.450000] Serial: 8250/16550 driver, 1 ports, IRQ sharing disabled
+
+[    1.460000] 18000300.uart: ttyS0 at MMIO 0x18000300 (irq = 117) is a 16550A
+
+[    1.470000] console [ttyS0] enabled, bootconsole disabled
+[    1.470000] console [ttyS0] enabled, bootconsole disabled
+
+[    1.480000] Trying to register dev faulty etc
+[    1.480000] at24 0-0050: 8192 byte 24c64 EEPROM, writable, 32 bytes/write
+[    1.490000] ONFI param page 0 valid
+[    1.490000] ONFI flash detected
+[    1.500000] NAND device: Manufacturer ID: 0x2c, Chip ID: 0xd3 (Micron MT29F8G08ABACAWP)
+[    1.500000] iproc_nand: heuristics exception detected, Micron MT29F8G08ABACA
+[    1.510000] iproc_nand: following bootloader settings
+[    1.520000] iproc_nand: 1024MiB total, 256KiB blocks, 4KiB pages, 27B OOB, 8-bit
+[    1.520000] iproc_nand: user oob per page: 102 bytes (4 steps)
+[    1.530000] Bad block table found at page 262080, version 0x01
+[    1.540000] Bad block table found at page 262016, version 0x01
+[    1.540000] Bad block table found at page 262080, version 0x01
+[    1.550000] Bad block table found at page 262016, version 0x01
+[    1.560000] Creating 6 MTD partitions on "nand_iproc.0":
+[    1.560000] 0x000000000000-0x000000200000 : "U-boot"
+[    1.570000] 0x000000100000-0x000000400000 : "bootkernel1"
+[    1.570000] 0x000000400000-0x000000500000 : "senao_nvram"
+[    1.580000] 0x000000500000-0x000000800000 : "bootkernel2"
+[    1.590000] 0x000000800000-0x00003ff00000 : "ubi"
+[    1.590000] 0x000000000000-0x00003ff00000 : "all"
+[    1.600000] iproc_nand: NAND controller driver is loaded
+[    1.600000] UBI: attaching mtd4 to ubi0
+[    1.610000] UBI: physical eraseblock size:   262144 bytes (256 KiB)
+[    1.610000] UBI: logical eraseblock size:    253952 bytes
+[    1.620000] UBI: smallest flash I/O unit:    4096
+[    1.620000] UBI: VID header offset:          4096 (aligned 4096)
+[    1.630000] UBI: data offset:                8192
+[    6.700000] UBI: max. sequence number:       624109
+[    6.720000] UBI: attached mtd4 to ubi0
+[    6.720000] UBI: MTD device name:            "ubi"
+[    6.730000] UBI: MTD device size:            1015 MiB
+[    6.730000] UBI: number of good PEBs:        4060
+[    6.740000] UBI: number of bad PEBs:         0
+[    6.740000] UBI: number of corrupted PEBs:   0
+[    6.750000] UBI: max. allowed volumes:       128
+[    6.750000] UBI: wear-leveling threshold:    4096
+[    6.760000] UBI: number of internal volumes: 1
+[    6.760000] UBI: number of user volumes:     5
+[    6.760000] UBI: available PEBs:             1726
+[    6.770000] UBI: total number of reserved PEBs: 2334
+[    6.770000] UBI: number of PEBs reserved for bad PEB handling: 40
+[    6.780000] UBI: max/mean erase counter: 159/154
+[    6.780000] UBI: image sequence number:  411950749
+[    6.790000] UBI: background thread "ubi_bgt0d" started, PID 247
+[    6.800000] tun: Universal TUN/TAP device driver, 1.6
+[    6.800000] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    6.810000] bcm5301x_gmac_init_module: NAPI2_POLL mode
+[    6.820000] bcm5301x_gmac_probe enter name:bcmiproc-gmac0; id:0x0; unit:0
+[    6.820000] NVRAM: map 0x1e0a0000
+[    6.850000] et0: eth1addr not found, ignore it
+[    6.860000] bcm5301x_gmac_probe enter name:bcmiproc-gmac1; id:0x0; unit:1
+[    6.860000] et1: eth2addr not found, ignore it
+[    6.870000] bcm5301x_gmac_probe enter name:bcmiproc-gmac2; id:0x0; unit:2
+[    6.870000] si_doattach chipid: 0x3f00cf1e
+[    6.880000] et2: base_addr (0x18024000) irq (181)
+[    6.880000] etc_gmac_speed default GMAC2 speed: auto
+[    6.890000] etc_attach() mdio_init_time = 5
+[    6.890000] si_doattach: incoming bus is PCI but it's a lie, switching to SI devid:0xcf1c
+[    6.900000] si_doattach chipid: 0x3f00cf1e
+[    6.900000] si_attach socitype(0x3) chip(0xcf1e) chiprev(0x0) chippkg(0x0)
+[    6.910000] et2: chipattach: phyaddr(0x1e)
+[    6.920000] et2: chipattach: Calling robo attach
+[    6.920000] bcm_robo_attach: devid32: 0x53025
+[    6.990000] bcm_robo_enable_switch IPROC OTP is not configured, can not determine skuid
+[    7.000000] bcm_robo_enable_switch Northstar Family chip
+[    7.000000] bcm_robo_enable_switch Checking powered down port (0x0)
+[    7.010000] eth0: Broadcom BCM5302x 10/100/1000 Mbps Ethernet Controller 6.30.40 (TOB) (r)
+[    7.020000] eth_mac_proc_create: enter
+[    7.020000] 
+[    7.020000] Creating fa bypass proc entry
+[    7.020000] et_ctf_active enabled
+[    7.030000] bcm5301x_gmac_probe enter name:bcmiproc-gmac3; id:0x0; unit:3
+[    7.030000] et3: eth3addr not found, ignore it
+[    7.040000] usbcore: registered new interface driver cdc_eem
+[    7.050000] usbcore: registered new interface driver cdc_subset
+[    7.050000] usbcore: registered new interface driver cdc_ncm
+[    7.060000] usbcore: registered new interface driver cdc_acm
+[    7.060000] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    7.070000] usbcore: registered new interface driver usbserial
+[    7.080000] usbcore: registered new interface driver usbserial_generic
+[    7.080000] USB Serial support registered for generic
+[    7.090000] usbserial: USB Serial Driver core
+[    7.090000] usbcore: registered new interface driver option
+[    7.100000] USB Serial support registered for GSM modem (1-port)
+[    7.100000] usbcore: registered new interface driver qcserial
+[    7.110000] USB Serial support registered for Qualcomm USB modem
+[    7.120000] usbcore: registered new interface driver sierra
+[    7.120000] USB Serial support registered for Sierra USB modem
+[    7.130000] input: gpio-buttons.2 as /devices/gpio-buttons.2/input/input0
+[    7.140000] i2c /dev entries driver
+[    7.140000] GENPLL[5] mdiv=12 rate=1500000000
+[    7.150000] GENPLL[5] mdiv=12 rate=1500000000
+[    7.150000] sp805-wdt sp805-wdt: registration successful
+[    7.160000] usbcore: registered new interface driver usbhid
+[    7.170000] usbhid: USB HID core driver
+[    7.170000] meraki-config board-data.5: Meraki config device loaded
+[    7.180000] TCP: cubic registered
+[    7.180000] NET: Registered protocol family 17
+[    7.180000] NET: Registered protocol family 15
+[    7.190000] 8021q: 802.1Q VLAN Support v1.8
+[    7.190000] Registering SWP/SWPB emulation handler
+[    7.200000] devtmpfs: mounted
+[    7.200000] Freeing init memory: 1844K
+[    7.210000] Made it into bootsh: Aug 25 2015 19:10:21
+[    7.210000] bootsh build wired-10-175355
+[    7.300000] UBIFS: recovery needed
+[    7.460000] UBIFS: recovery completed
+[    7.470000] UBIFS: mounted UBI device 0, volume 3, name "storage"
+[    7.470000] UBIFS: file system size:   534061056 bytes (521544 KiB, 509 MiB, 2103 LEBs)
+[    7.480000] UBIFS: journal size:       26664960 bytes (26040 KiB, 25 MiB, 105 LEBs)
+[    7.490000] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    7.490000] UBIFS: default compressor: lzo
+[    7.500000] UBIFS: reserved for root:  4952683 bytes (4836 KiB)
+[   10.350000] Mapping 16998400 bytes for /dev/mtdblock/part.safe
+[   10.390000] Meraki-build is wired-11-188434
+Description: wired-arm-nsp Kernel
+Description: wired-arm-nsp Ramdisk
+cksum computed: 0x1000 given: 0x1000
+found valid board data at 0x0
+Description: wired-arm-nsp Device Tree 2GB
+[   13.270000] UBIFS: un-mount UBI device 0, volume 3
+[   13.280000] Starting new kernel
+[   13.280000] Bye!
+[    0.000000] Booting Linux on physical CPU 0
+
+[    0.000000] Linux version 3.4.106+ (meraki@buildbot103.meraki.com) (gcc version 4.8.3 (GCC) ) #3 SMP Fri Dec 18 05:05:10 PST 2015
+
+[    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
+
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+
+[    0.000000] Machine: Meraki Kingpin, model: Meraki MX64
+
+[    0.000000] bootconsole [earlycon0] enabled
+
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+
+[    0.000000] BUG: mapping for 0x18000000 at 0xff000000 out of vmalloc space
+
+[    0.000000] BUG: mapping for 0x19000000 at 0xff200000 out of vmalloc space
+
+[    0.000000] PERCPU: Embedded 7 pages/cpu @42486000 s5888 r8192 d14592 u32768
+
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 520176
+
+[    0.000000] Kernel command line: console=ttyS0,115200n8 ubi.mtd=ubi earlyprintk
+
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+
+[    0.000000] Dentry cache hash table entries: 262144 (order: 8, 1048576 bytes)
+
+[    0.000000] Inode-cache hash table entries: 131072 (order: 7, 524288 bytes)
+
+[    0.000000] Memory: 2047MB = 2047MB total
+
+[    0.000000] Memory: 2062152k/2062152k available, 34936k reserved, 0K highmem
+
+[    0.000000] Virtual kernel memory layout:
+
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+
+[    0.000000]     vmalloc : 0xc0000000 - 0xff000000   (1008 MB)
+
+[    0.000000]     lowmem  : 0x40000000 - 0xbfff0000   (2047 MB)
+
+[    0.000000]     modules : 0x3f000000 - 0x40000000   (  16 MB)
+
+[    0.000000]       .text : 0x40008000 - 0x40372474   (3498 kB)
+
+[    0.000000]       .init : 0x40373000 - 0x40398700   ( 150 kB)
+
+[    0.000000]       .data : 0x4039a000 - 0x403c83e8   ( 185 kB)
+
+[    0.000000]        .bss : 0x403c840c - 0x40408b14   ( 258 kB)
+
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+
+[    0.000000] Hierarchical RCU implementation.
+
+[    0.000000] NR_IRQS:292
+
+[    0.000000] sched_clock: 32 bits at 100 Hz, resolution 10000000ns, wraps every 4294967286ms
+
+[    0.010000] Calibrating delay loop... 2393.70 BogoMIPS (lpj=11968512)
+
+[    0.080000] pid_max: default: 32768 minimum: 301
+
+[    0.080000] Mount-cache hash table entries: 512
+
+[    0.090000] CPU: Testing write buffer coherency: ok
+
+[    0.090000] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+
+[    0.100000] smp_twd: clock not found: -2
+
+[    0.100000] Calibrating local timer... 599.95MHz.
+
+[    0.170000] hw perfevents: enabled with ARMv7 Cortex-A9 PMU driver, 7 counters available
+
+[    0.170000] Setting up static identity map for 0x6028ab30 - 0x6028ab88
+
+[    0.180000] L310 cache controller enabled
+
+[    0.180000] l2x0: 16 ways, CACHE_ID 0x410000c8, AUX_CTRL 0x0a150000, Cache size: 524288 B
+
+[    0.190000] CPU1: Booted secondary processor
+
+[    0.340000] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+
+[    0.350000] Brought up 2 CPUs
+
+[    0.350000] SMP: Total of 2 processors activated (4787.40 BogoMIPS).
+
+[    0.360000] devtmpfs: initialized
+
+[    0.370000] NET: Registered protocol family 16
+
+[    0.370000] gpiochip_add: registered GPIOs 0 to 31 on device: GPIOA
+
+[    0.380000] iproc gpiochip add GPIOA
+
+[    0.380000] GPIOA:ioaddr ff000060 
+
+[    0.390000] GPIOA:intr_ioaddr ff000000 dmu_ioaddr ff020000
+
+[    0.390000] gpiochip_add: registered GPIOs 32 to 35 on device: GPIOB
+
+[    0.400000] iproc gpiochip add GPIOB
+
+[    0.400000] GPIOB:ioaddr ff030000 
+
+[    0.410000] request_idm_timeout_interrupts: 600 entry
+
+[    0.410000] idm_timeout_handler: 340, 0 entry
+
+[    0.420000] idm_timeout_handler: 444, 1
+
+[    0.420000] idm_timeout_handler: 446, ffff0000
+
+[    0.420000] idm_timeout_handler: 448, 00680068
+
+[    0.430000] idm_timeout_handler: 450, 01111200
+
+[    0.430000] idm_timeout_handler: 453, 0
+
+[    0.440000] idm_timeout_handler: 585 exit
+
+[    0.440000] request_idm_timeout_interrupts: 696 exit
+
+[    0.450000] hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+
+[    0.460000] hw-breakpoint: maximum watchpoint size is 4 bytes.
+
+[    0.460000] bio: create slab <bio-0> at 0
+
+[    0.470000] usbcore: registered new interface driver usbfs
+
+[    0.480000] usbcore: registered new interface driver hub
+
+[    0.480000] usbcore: registered new device driver usb
+
+[    0.490000] i2c-gpio i2c-gpio.3: using pins 5 (SDA) and 4 (SCL)
+
+[    0.490000] Switching to clocksource iproc_gtimer
+
+[    0.500000] NET: Registered protocol family 2
+
+[    0.510000] IP route cache hash table entries: 65536 (order: 6, 262144 bytes)
+
+[    0.520000] TCP established hash table entries: 262144 (order: 9, 2097152 bytes)
+
+[    0.530000] TCP bind hash table entries: 65536 (order: 7, 524288 bytes)
+
+[    0.530000] TCP: Hash tables configured (established 262144 bind 65536)
+
+[    0.540000] TCP: reno registered
+
+[    0.540000] UDP hash table entries: 1024 (order: 3, 32768 bytes)
+
+[    0.550000] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes)
+
+[    0.560000] NET: Registered protocol family 1
+
+[    0.560000] Unpacking initramfs...
+
+[    5.970000] Freeing initrd memory: 12748K
+
+[    6.230000] PCIE0: LINKSTA reg 0xbe val 0x1001
+
+[    6.230000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x1, PCIE0 link=0
+
+[    6.500000] PCIE1: LINKSTA reg 0xbe val 0x1001
+
+[    6.510000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x1, PCIE1 link=0
+
+[    6.780000] PCIE2: LINKSTA reg 0xbe val 0x1001
+
+[    6.780000] reg[0xac]=0x10, reg[0xae]=0x42, reg[0xb0]=0x8000, reg[0xb4]=0x2c10, reg[0xb6]=0x10, reg[0xb8]=0x5c12, reg[0xba]=0x65, reg[0xbe]=0x1001, reg[0xc6]=0x40, reg[0xca]=0x1, reg[0xd0]=0x1f, reg[0xd2]=0x8, reg[0xdc]=0x1, reg[0xde]=0x1, PCIE2 link=0
+
+[    6.810000] pm_init: Initializing Power Management ....
+
+[    6.890000] msgmni has been set to 4052
+
+[    6.900000] io scheduler noop registered
+
+[    6.900000] io scheduler deadline registered
+
+[    6.900000] io scheduler cfq registered (default)
+
+[    6.910000] iproc_pwmc_probe iobase ff031000 phys:18031000
+
+[    6.920000] Serial: 8250/16550 driver, 1 ports, IRQ sharing disabled
+
+[    6.930000] 18000300.uart: ttyS0 at MMIO 0x18000300 (irq = 117) is a 16550A
+
+[    6.930000] console [ttyS0] enabled, bootconsole disabled
+[    6.930000] console [ttyS0] enabled, bootconsole disabled
+
+[    6.940000] at24 0-0050: 8192 byte 24c64 EEPROM, writable, 32 bytes/write
+[    6.950000] ONFI param page 0 valid
+[    6.950000] ONFI flash detected
+[    6.960000] NAND device: Manufacturer ID: 0x2c, Chip ID: 0xd3 (Micron MT29F8G08ABACAWP)
+[    6.960000] iproc_nand: heuristics exception detected, Micron MT29F8G08ABACA
+[    6.970000] iproc_nand: following bootloader settings
+[    6.980000] iproc_nand: 1024MiB total, 256KiB blocks, 4KiB pages, 27B OOB, 8-bit
+[    6.980000] iproc_nand: user oob per page: 102 bytes (4 steps)
+[    6.990000] Bad block table found at page 262080, version 0x01
+[    7.000000] Bad block table found at page 262016, version 0x01
+[    7.000000] Bad block table found at page 262080, version 0x01
+[    7.010000] Bad block table found at page 262016, version 0x01
+[    7.020000] Creating 6 MTD partitions on "nand_iproc.0":
+[    7.020000] 0x000000000000-0x000000200000 : "U-boot"
+[    7.030000] 0x000000100000-0x000000400000 : "bootkernel1"
+[    7.040000] 0x000000400000-0x000000500000 : "senao_nvram"
+[    7.050000] 0x000000500000-0x000000800000 : "bootkernel2"
+[    7.060000] 0x000000800000-0x00003ff00000 : "ubi"
+[    7.070000] 0x000000000000-0x00003ff00000 : "all"
+[    7.090000] iproc_nand: NAND controller driver is loaded
+[    7.090000] UBI: attaching mtd4 to ubi0
+[    7.100000] UBI: physical eraseblock size:   262144 bytes (256 KiB)
+[    7.100000] UBI: logical eraseblock size:    253952 bytes
+[    7.110000] UBI: smallest flash I/O unit:    4096
+[    7.110000] UBI: VID header offset:          4096 (aligned 4096)
+[    7.120000] UBI: data offset:                8192
+[   12.290000] UBI: max. sequence number:       624112
+[   12.320000] UBI: attached mtd4 to ubi0
+[   12.320000] UBI: MTD device name:            "ubi"
+[   12.320000] UBI: MTD device size:            1015 MiB
+[   12.330000] UBI: number of good PEBs:        4060
+[   12.330000] UBI: number of bad PEBs:         0
+[   12.340000] UBI: number of corrupted PEBs:   0
+[   12.340000] UBI: max. allowed volumes:       128
+[   12.350000] UBI: wear-leveling threshold:    4096
+[   12.350000] UBI: number of internal volumes: 1
+[   12.360000] UBI: number of user volumes:     5
+[   12.360000] UBI: available PEBs:             1726
+[   12.370000] UBI: total number of reserved PEBs: 2334
+[   12.370000] UBI: number of PEBs reserved for bad PEB handling: 40
+[   12.380000] UBI: max/mean erase counter: 159/154
+[   12.380000] UBI: image sequence number:  411950749
+[   12.390000] UBI: background thread "ubi_bgt0d" started, PID 377
+[   12.440000] tun: Universal TUN/TAP device driver, 1.6
+[   12.440000] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[   12.450000] bcm5301x_gmac_init_module: NAPI2_POLL mode
+[   12.450000] bcm5301x_gmac_probe enter name:bcmiproc-gmac0; id:0x0; unit:0
+[   12.460000] NVRAM: map 0x1e0a0000
+[   12.490000] et0: eth1addr not found, ignore it
+[   12.500000] bcm5301x_gmac_probe enter name:bcmiproc-gmac1; id:0x0; unit:1
+[   12.500000] et1: eth2addr not found, ignore it
+[   12.510000] bcm5301x_gmac_probe enter name:bcmiproc-gmac2; id:0x0; unit:2
+[   12.520000] si_doattach chipid: 0x3f00cf1e
+[   12.520000] et2: base_addr (0x18024000) irq (181)
+[   12.530000] etc_gmac_speed default GMAC2 speed: auto
+[   12.530000] etc_attach() mdio_init_time = 5
+[   12.540000] si_doattach: incoming bus is PCI but it's a lie, switching to SI devid:0xcf1c
+[   12.550000] si_doattach chipid: 0x3f00cf1e
+[   12.550000] si_attach socitype(0x3) chip(0xcf1e) chiprev(0x0) chippkg(0x0)
+[   12.560000] et2: chipattach: phyaddr(0x1e)
+[   12.560000] et2: chipattach: Calling robo attach
+[   12.570000] bcm_robo_attach: devid32: 0x53025
+[   12.640000] bcm_robo_enable_switch IPROC OTP is not configured, can not determine skuid
+[   12.650000] bcm_robo_enable_switch Northstar Family chip
+[   12.650000] bcm_robo_enable_switch Checking powered down port (0x0)
+[   12.660000] eth0: Broadcom BCM5302x 10/100/1000 Mbps Ethernet Controller 6.30.40 (TOB) (r)
+[   12.670000] eth_mac_proc_create: enter
+[   12.670000] 
+[   12.670000] Creating fa bypass proc entry
+[   12.680000] et_ctf_active enabled
+[   12.680000] bcm5301x_gmac_probe enter name:bcmiproc-gmac3; id:0x0; unit:3
+[   12.690000] et3: eth3addr not found, ignore it
+[   12.690000] PPP generic driver version 2.4.2
+[   12.700000] PPP BSD Compression module registered
+[   12.700000] PPP Deflate Compression module registered
+[   12.710000] NET: Registered protocol family 24
+[   12.720000] usbcore: registered new interface driver cdc_ether
+[   12.720000] usbcore: registered new interface driver cdc_eem
+[   12.730000] usbcore: registered new interface driver cdc_subset
+[   12.730000] usbcore: registered new interface driver sierra_net
+[   12.740000] usbcore: registered new interface driver cdc_ncm
+[   12.750000] Initial usb2h clock is: 000003fc
+[   12.750000] Initial usb2h clock now is: 000003fd
+[   12.750000] Initial usb2_reset_state is: 00000001
+[   12.760000] usb2_reset_state is set and now it is: 00000000
+[   12.770000] usbcore: registered new interface driver cdc_acm
+[   12.770000] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[   12.780000] usbcore: registered new interface driver usbserial
+[   12.790000] usbserial: USB Serial Driver core
+[   12.790000] usbcore: registered new interface driver option
+[   12.800000] USB Serial support registered for GSM modem (1-port)
+[   12.810000] usbcore: registered new interface driver qcserial
+[   12.810000] USB Serial support registered for Qualcomm USB modem
+[   12.820000] usbcore: registered new interface driver sierra
+[   12.830000] USB Serial support registered for Sierra USB modem
+[   12.830000] input: gpio-buttons.2 as /devices/gpio-buttons.2/input/input0
+[   12.840000] i2c /dev entries driver
+[   12.850000] GENPLL[5] mdiv=12 rate=1500000000
+[   12.860000] GENPLL[5] mdiv=12 rate=1500000000
+[   12.860000] sp805-wdt sp805-wdt: registration successful
+[   12.900000] usbcore: registered new interface driver usbhid
+[   12.900000] usbhid: USB HID core driver
+[   12.910000] meraki-config board-data.5: Meraki config device loaded
+[   12.920000] TCP: cubic registered
+[   12.920000] Initializing XFRM netlink socket
+[   12.920000] NET: Registered protocol family 17
+[   12.930000] NET: Registered protocol family 15
+[   12.930000] L2TP core driver, V2.0
+[   12.940000] PPPoL2TP kernel driver, V2.0
+[   12.940000] 8021q: 802.1Q VLAN Support v1.8
+[   12.940000] Registering SWP/SWPB emulation handler
+[   12.950000] devtmpfs: mounted
+[   12.960000] Freeing init memory: 148K
+[   12.960000] Made it into bootsh: Dec 18 2015 04:56:06
+[   12.970000] bootsh build wired-11-188434
+[   13.160000] UBIFS: mounted UBI device 0, volume 3, name "storage"
+[   13.160000] UBIFS: file system size:   534061056 bytes (521544 KiB, 509 MiB, 2103 LEBs)
+[   13.170000] UBIFS: journal size:       26664960 bytes (26040 KiB, 25 MiB, 105 LEBs)
+[   13.180000] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[   13.180000] UBIFS: default compressor: lzo
+[   13.190000] UBIFS: reserved for root:  4952683 bytes (4836 KiB)
+[   13.290000] 
+init started: BusyBox v1.20.2 (2015-12-18 03:28:46 PST)
+WARNING! THIS CONSOLE IS LOGGED! UNAUTHORIZED ACCESS FORBIDDEN!
+<Meraki> [   13.420000] sysctl: error: 'vm.extfrag_threshold' is an unknown key
+[   13.520000] device eth0 entered promiscuous mode
+[   13.860000] GENPLL[5] mdiv=12 rate=1500000000
+[   13.870000] sysctl -w vm.panic_on_oom=2
+[   13.880000] vm.panic_on_oom = 2
+[   13.970000] click: starting router thread pid 759 (bf8d3b00)
+[   14.010000] elts_meraki: module license 'unspecified' taints kernel.
+[   14.140000] pid 759's current affinity mask: 3
+[   14.140000] pid 759's new affinity mask: 2
+[   14.150000] Single synchronous check for reset
+[   14.180000] 
+[   14.180000] !!!!! {/usr/bin/led_ssi} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   14.190000] 
+[   14.190000] !!!!! {/usr/bin/led_ssi} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   14.230000] GobiNet: 2013-10-08/NTGR_2.21
+[   14.230000] usbcore: registered new interface driver GobiNet
+[   14.260000] usbcore: registered new interface driver GobiSerial
+[   14.260000] USB Serial support registered for GobiSerial
+[   14.270000] GobiSerial: 2013-10-08/NTGR_2.12:GobiSerial
+[   14.300000] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[   14.300000] bcm-ehci bcm-ehci.0: bcm-ehci
+[   14.310000] bcm-ehci bcm-ehci.0: new USB bus registered, assigned bus number 1
+[   14.310000] bcm-ehci bcm-ehci.0: irq 111, io mem 0xff02a000
+[   14.350000] bcm-ehci bcm-ehci.0: USB 2.0 started, EHCI 1.00
+[   14.350000] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[   14.360000] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[   14.360000] usb usb1: Product: bcm-ehci
+[   14.370000] usb usb1: Manufacturer: Linux 3.4.106+ ehci_hcd
+[   14.370000] usb usb1: SerialNumber: bcm-ehci
+[   14.380000] hub 1-0:1.0: USB hub found
+[   14.380000] hub 1-0:1.0: 2 ports detected
+[   14.390000] bcm-ehci bcm-ehci.0: probe done
+[   14.420000] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[   14.420000] bcm-ohci bcm-ohci.0: bcm-ohci
+[   14.430000] bcm-ohci bcm-ohci.0: new USB bus registered, assigned bus number 2
+[   14.440000] bcm-ohci bcm-ohci.0: irq 111, io mem 0xff02b000
+[   14.510000] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+[   14.520000] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[   14.520000] usb usb2: Product: bcm-ohci
+[   14.520000] et2 Link Up: 0FD
+[   14.530000] usb usb2: Manufacturer: Linux 3.4.106+ ohci_hcd
+[   14.540000] usb usb2: SerialNumber: bcm-ohci
+[   14.540000] hub 2-0:1.0: USB hub found
+[   14.540000] hub 2-0:1.0: 2 ports detected
+[   14.550000] bcm-ohci bcm-ohci.0: probe done
+[   14.600000] wl: module license 'Proprietary' taints kernel.
+[   14.800000] 
+[   14.810000] boot 160 build wired-11-188434 board wired-arm-nsp mac 00:18:0A:4A:D7:30
+[   14.820000] /usr/bin/snort-version
+[   14.830000] Module: dummy  .text=0x3f000000 .data=0x3f0003f4 .bss=
+[   14.830000] Module: proclikefs  .text=0x3f004000 .data= .bss=0x3f004b40
+[   14.830000] Module: merakiclick  .text=0x3f009000 .data=0x3f0f60d8 .bss=0x3f0f6340
+[   14.830000] Module: elts_meraki  .text=0x3f1e9000 .data=0x3f3fa1e0 .bss=0x3f3fa944
+[   14.830000] Module: GobiNet  .text=0x3f54b000 .data=0x3f554588 .bss=0x3f5547d8
+[   14.830000] Module: GobiSerial  .text=0x3f55b000 .data=0x3f55be94 .bss=0x3f55c360
+[   14.830000] Module: ehci_hcd  .text=0x3f560000 .data=0x3f56a608 .bss=0x3f56a85c
+[   14.830000] Module: ohci_hcd  .text=0x3f572000 .data=0x3f57813c .bss=0x3f578370
+[   14.830000] Module: wl  .text=0x3f57f000 .data=0x3f898894 .bss=0x3f919c34
+[   14.920000] phram: phram-oops device: 0x10000 at 0xdfff0000
+[   14.990000] ramoops: platform device not found, using module parameters
+[   15.080000] cksum computed: 0x1000 given: 0x1000
+[   15.080000] found valid board data at 0x0
+[   16.230000] 
+[   16.230000] !!!!! {/usr/bin/wired_brain} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   16.240000] 
+[   16.240000] !!!!! {/usr/bin/wired_brain} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   18.050000] 
+[   18.050000] !!!!! {/usr/bin/wired_brain} failed writing /proc/sys/net/ipv4/tcp_syncookies len 1 data: "0"
+[   18.380000] 
+[   18.380000] !!!!! {/usr/bin/wired_brain} failed writing /sys/devices/system/cpu/cpu1/online len 1 data: "1"
+[   19.120000] 
+[   19.120000] !!!!! {/usr/bin/wan_accel_proxy} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   19.130000] 
+[   19.130000] !!!!! {/usr/bin/wan_accel_proxy} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+Jan  1 00:00:19 snort[1882]:     Log MAIL FROM Address: Enabled
+
+
+Jan  1 00:00:19 snort[1882]:     Log RCPT TO Addresses: Enabled
+
+
+Jan  1 00:00:19 snort[1882]:     Log Email Headers: Enabled
+
+
+Jan  1 00:00:19 snort[1882]:     Email Hdrs Log Depth: 1464
+
+
+[   21.330000] 
+[   21.330000] !!!!! {/usr/bin/wired_brain} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+[   21.350000] 
+[   21.350000] !!!!! {/usr/bin/wired_brain} type ipsec_vpn not recognized, setting administative_distance to high (= bad) value of 2147483647
+WARNING! THIS CONSOLE IS LOGGED! UNAUTHORIZED ACCESS FORBIDDEN!
+<Meraki>
